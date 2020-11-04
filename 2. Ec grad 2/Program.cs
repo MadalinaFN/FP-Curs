@@ -22,11 +22,22 @@ namespace _2.Ec_grad_2
             Console.WriteLine("Introduceti valoarea pentru c");
             c = int.Parse(Console.ReadLine());
 
-            rad = Math.Sqrt((b * b) - (4 * a * c));
-            x1 = ((-b) + rad) / (2 * a);
-            x2 = ((-b) - rad) / (2 * a);
+            if (2 * a != 0)
+            {
+                rad = Math.Sqrt((b * b) - (4 * a * c));
+                x1 = ((-b) + rad) / (2 * a);
+                x2 = ((-b) - rad) / (2 * a);
 
-            Console.WriteLine($"Rezultatele ecuatiei sunt {x1} si {x2}");
+                Console.WriteLine($"Rezultatele ecuatiei sunt {x1} si {x2}");
+            }
+            else
+            {
+                rad = Math.Sqrt((b * b) - (4 * a * c));
+                if (((-b) + rad) == 0)
+                    Console.WriteLine("Ecuatia este nedeterminata");
+                else
+                    Console.WriteLine("Ecuatia este imposibila");
+            }
         }
     }
 }
