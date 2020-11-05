@@ -19,6 +19,47 @@ namespace Problems_pool_1___probleme_cu_numere
             //triunghi();
             //inversarenr();
             //inversarenr1();
+            //divizori();
+            //nrprim();
+        }
+
+        /// <summary>
+        /// Test de primalitate: determinati daca un numar n este prim.
+        /// </summary>
+        private static void nrprim()
+        {
+            int n;
+            bool nrprim = true;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                    nrprim = false;
+            }
+            if (nrprim == true)
+                Console.WriteLine("Numarul introdus este un numar prim");
+            else
+                Console.WriteLine("Numarul introdus nu este un numar prim");
+        }
+
+        /// <summary>
+        /// Afisati toti divizorii numarului n.
+        /// </summary>
+        private static void divizori()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                    Console.WriteLine($"Divizorii numarului sunt {i}");
+            }
         }
 
         /// <summary>
