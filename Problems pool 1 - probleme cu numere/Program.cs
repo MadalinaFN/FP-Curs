@@ -15,7 +15,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //Ecgrad2();
             //nsedividecuk();
             //anbisect();
-            akacifra();
+            //akacifra();
             //triunghi();
         }
 
@@ -24,7 +24,19 @@ namespace Problems_pool_1___probleme_cu_numere
         /// </summary>
         private static void triunghi()
         {
-            
+            int a, b, c;
+
+            Console.WriteLine("Introduceti valoarea pentru latura a");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru latura b");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru latura c");
+            c = int.Parse(Console.ReadLine());
+
+            if ((a < b + c) && (b < a + c) && (c < b + a) && (a > 0) && (b > 0) && (c > 0))
+                Console.WriteLine("Cele trei numere pot fi lungimile laturilor unui triunghi");
+            else
+                Console.WriteLine("Cele trei numere nu pot fi lungimile laturilor unui triunghi");
         }
 
         /// <summary>
