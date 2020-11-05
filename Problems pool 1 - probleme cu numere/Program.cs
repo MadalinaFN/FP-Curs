@@ -17,10 +17,30 @@ namespace Problems_pool_1___probleme_cu_numere
             //anbisect();
             //akacifra();
             //triunghi();
+            //inversarenr();
         }
 
         /// <summary>
-        /// // Detreminati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi.
+        /// (Swap) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare. Se cere sa se inverseze valorile lor.
+        /// </summary>
+        private static void inversarenr()
+        {
+            int a, b, t;
+
+            Console.WriteLine("Introduceti valoarea pentru a");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru b");
+            b = int.Parse(Console.ReadLine());
+
+            t = a;
+            a = b;
+            b = t;
+
+            Console.WriteLine($"Numerele inversate sunt {a} si {b}");
+        }
+
+        /// <summary>
+        /// Determinati daca trei numere pozitive a, b si c pot fi lungimile laturilor unui triunghi.
         /// </summary>
         private static void triunghi()
         {
@@ -40,7 +60,7 @@ namespace Problems_pool_1___probleme_cu_numere
         }
 
         /// <summary>
-        /// // Extrageti si afisati a k-a cifra de la sfarsitul unui numar. Cifrele se numara de la dreapta la stanga.
+        /// Extrageti si afisati a k-a cifra de la sfarsitul unui numar. Cifrele se numara de la dreapta la stanga.
         /// </summary>
         private static void akacifra()
         {
@@ -80,7 +100,7 @@ namespace Problems_pool_1___probleme_cu_numere
         }
 
         /// <summary>
-        /// // Determinati daca un an y este an bisect.
+        /// Determinati daca un an y este an bisect.
         /// </summary>
         private static void anbisect()
         {
@@ -100,7 +120,7 @@ namespace Problems_pool_1___probleme_cu_numere
         }
 
         /// <summary>
-        /// // Determinati daca n se divide cu k, unde n si k sunt date de intrare.
+        /// Determinati daca n se divide cu k, unde n si k sunt date de intrare.
         /// </summary>
         private static void nsedividecuk()
         {
@@ -124,8 +144,8 @@ namespace Problems_pool_1___probleme_cu_numere
         }
 
         /// <summary>
-        /// // Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. 
-        /// // Tratati toate cazurile posibile.
+        /// Rezolvati ecuatia de gradul 2 cu o necunoscuta: ax^2 + bx + c = 0, unde a, b si c sunt date de intrare. 
+        /// Tratati toate cazurile posibile.
         /// </summary>
         private static void Ecgrad2()
         {
@@ -157,7 +177,7 @@ namespace Problems_pool_1___probleme_cu_numere
         }
 
         /// <summary>
-        /// // Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare.
+        /// Rezolvati ecuatia de gradul 1 cu o necunoscuta: ax+b = 0, unde a si b sunt date de intrare.
         /// </summary>
         private static void Ecgrad1()
         {
