@@ -18,6 +18,27 @@ namespace Problems_pool_1___probleme_cu_numere
             //akacifra();
             //triunghi();
             //inversarenr();
+            //inversarenr1();
+        }
+
+        /// <summary>
+        /// (Swap restrictionat) Se dau doua variabile numerice a si b ale carori valori sunt date de intrare. 
+        /// Se cere sa se inverseze valorile lor fara a folosi alte variabile suplimentare.
+        /// </summary>
+        private static void inversarenr1()
+        {
+            int a, b;
+
+            Console.WriteLine("Introduceti valoarea pentru a");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru b");
+            b = int.Parse(Console.ReadLine());
+
+            a = a - b;
+            b = a + b;
+            a = b - a;
+
+            Console.WriteLine($"Numerele inversate sunt {a} si {b}");
         }
 
         /// <summary>
