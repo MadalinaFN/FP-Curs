@@ -21,6 +21,26 @@ namespace Problems_pool_1___probleme_cu_numere
             //inversarenr1();
             //divizori();
             //nrprim();
+            inversarecifre();
+        }
+
+        /// <summary>
+        /// Afisati in ordine inversa cifrele unui numar n.
+        /// </summary>
+        private static void inversarecifre()
+        {
+            int n, i = 0;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+
+            while (n != 0)
+            {
+                i = (i * 10) + (n % 10);
+                n = n / 10;
+            }
+
+            Console.WriteLine($"Cifrele numarului in ordine inversa sunt {i}");
         }
 
         /// <summary>
