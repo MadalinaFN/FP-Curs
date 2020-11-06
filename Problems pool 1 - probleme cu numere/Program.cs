@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +26,75 @@ namespace Problems_pool_1___probleme_cu_numere
             //divizibilitateinterval();
             //anibisecti();
             //palindrom();
-            nrcrescatoare3();
+            //nrcrescatoare3();
+            //nrcrescatoare5();
+            CMMDCMMM();
+        }
+
+        /// <summary>
+        /// Determianti cel mai mare divizor comun si cel mai mic multiplu comun a doua numere. Folositi algoritmul lui Euclid.
+        /// </summary>
+        private static void CMMDCMMM()
+        {
+            int a, b, a1, b1, cmmmc;
+
+            Console.WriteLine("Introduceti doua numere");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+
+            a1 = a;
+            b1 = b;
+
+            while (a1 != b1)
+            {
+                if (a1 > b1) a1 = a1 - b1;
+                else b1 = b1 - a1;
+            }
+
+            cmmmc = (a * b) / a1;
+
+            Console.WriteLine($"Cel mai mare divizor comun este {a1} si cel mai mic multiplu comun este {cmmmc}");
+        }
+
+        /// <summary>
+        /// Se dau 5 numere. Sa se afiseze in ordine crescatoare. (nu folositi tablouri)
+        /// </summary>
+        private static void nrcrescatoare5()
+        {
+            int a, b, c, d, e;
+
+            Console.WriteLine("Introduceti cinci numere");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+            d = int.Parse(Console.ReadLine());
+            e = int.Parse(Console.ReadLine());
+
+            int min, med1, med, med2, max;
+
+            min = a;
+            if (b < min)
+                min = b;
+            if (c < min)
+                min = c;
+            if (d < min)
+                min = d;
+            if (e < min)
+                min = e;
+
+            max = a;
+            if (b > max)
+                max = b;
+            if (c > max)
+                max = c;
+            if (d > max)
+                max = d;
+            if (e > max)
+                max = e;
+
+            
+
+            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {min}  {max}");
         }
 
         /// <summary>
