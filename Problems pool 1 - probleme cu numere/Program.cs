@@ -28,7 +28,35 @@ namespace Problems_pool_1___probleme_cu_numere
             //palindrom();
             //nrcrescatoare3();
             //nrcrescatoare5();
-            CMMDCMMM();
+            //CMMDCMMM();
+            factoriprimi();
+        }
+
+        /// <summary>
+        /// Afisati descompunerea in factori primi ai unui numar n.  De ex. pentru n = 1776 afisati 2^3 x 3^1 x 7^2.
+        /// </summary>
+        private static void factoriprimi()
+        {
+            int n, b, p;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+
+            b = 2;
+
+            while (n > 1)
+            {
+                p = 0;
+                while (n % b == 0)
+                {
+                    n = n / b;
+                    p++;
+                }
+                if (p != 0)
+                    Console.WriteLine($"{b}^{p}");
+                b++;
+            }
+            Console.WriteLine("Descompunerea in factori primi a numarului este inmultirea numerelor de mai sus");
         }
 
         /// <summary>
