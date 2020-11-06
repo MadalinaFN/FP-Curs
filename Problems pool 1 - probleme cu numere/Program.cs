@@ -24,7 +24,39 @@ namespace Problems_pool_1___probleme_cu_numere
             //inversarecifre();
             //divizibilitateinterval();
             //anibisecti();
-            palindrom();
+            //palindrom();
+            nrcrescatoare3();
+        }
+
+        /// <summary>
+        /// Se dau 3 numere. Sa se afiseze in ordine crescatoare.
+        /// </summary>
+        private static void nrcrescatoare3()
+        {
+            int a, b, c;
+
+            Console.WriteLine("Introduceti trei numere");
+            a = int.Parse(Console.ReadLine());
+            b = int.Parse(Console.ReadLine());
+            c = int.Parse(Console.ReadLine());
+
+            int min, med, max;
+
+            min = a;
+            if (b < min)
+                min = b;
+            if (c < min)
+                min = c;
+
+            max = a;
+            if (b > max)
+                max = b;
+            if (c > max)
+                max = c;
+
+            med = a + b + c - min - max;
+
+            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {min} {med} {max}");
         }
 
         /// <summary>
