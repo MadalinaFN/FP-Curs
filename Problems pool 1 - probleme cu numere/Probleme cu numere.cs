@@ -27,9 +27,9 @@ namespace Problems_pool_1___probleme_cu_numere
             //anibisecti();
             //palindrom();
             //nrcrescatoare3();
-            //nrcrescatoare5();
+            nrcrescatoare5();
             //CMMDCMMM();
-            factoriprimi();
+            //factoriprimi();
         }
 
         /// <summary>
