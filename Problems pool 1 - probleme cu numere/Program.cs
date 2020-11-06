@@ -21,7 +21,32 @@ namespace Problems_pool_1___probleme_cu_numere
             //inversarenr1();
             //divizori();
             //nrprim();
-            inversarecifre();
+            //inversarecifre();
+            divizibilitateinterval();
+        }
+
+        /// <summary>
+        /// Determinati cate numere intregi divizibile cu n se afla in intervalul [a, b].
+        /// </summary>
+        private static void divizibilitateinterval()
+        {
+            int n, a, b, c = 0;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru a din intervalul [a, b]");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru b din intervalul [a, b]");
+            b = int.Parse(Console.ReadLine());
+
+            for (int i = a; i <= b; i++)
+            {
+                if (i % n == 0)
+                {
+                    c++;
+                }
+            }
+            Console.WriteLine($"In intervalul [{a}, {b}] se afla {c} numere intregi divizibile cu {n}");
         }
 
         /// <summary>
