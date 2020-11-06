@@ -23,7 +23,32 @@ namespace Problems_pool_1___probleme_cu_numere
             //nrprim();
             //inversarecifre();
             //divizibilitateinterval();
-            anibisecti();
+            //anibisecti();
+            palindrom();
+        }
+
+        /// <summary>
+        /// Determianti daca un numar n este palindrom. 
+        /// (un numar este palindrom daca citit invers obtinem un numar egal cu el, de ex. 121 sau 12321.
+        /// </summary>
+        private static void palindrom()
+        {
+            int n, n1, m = 0;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
+
+            n1 = n;
+
+            while (n > 0)
+            {
+                m = (m * 10) + (n % 10);
+                n = n / 10;
+            }
+            if (n1 == m)
+                Console.WriteLine("Numarul este palindrom");
+            else
+                Console.WriteLine("Numarul nu este palindrom");
         }
 
         /// <summary>
