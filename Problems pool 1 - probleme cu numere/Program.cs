@@ -22,7 +22,30 @@ namespace Problems_pool_1___probleme_cu_numere
             //divizori();
             //nrprim();
             //inversarecifre();
-            divizibilitateinterval();
+            //divizibilitateinterval();
+            anibisecti();
+        }
+
+        /// <summary>
+        /// Determianti cati ani bisecti sunt intre anii y1 si y2.
+        /// </summary>
+        private static void anibisecti()
+        {
+            int y1, y2, b = 0;
+
+            Console.WriteLine("Introduceti primul an");
+            y1 = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti al doilea an");
+            y2 = int.Parse(Console.ReadLine());
+
+            for (int i = y1; i <= y2; i++)
+            {
+                if (i % 4 == 0 && i % 100 != 0)
+                {
+                    b++;
+                }
+            }
+            Console.WriteLine($"Intre anii {y1} si {y2} sunt {b} ani bisecti");
         }
 
         /// <summary>
