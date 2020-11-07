@@ -30,6 +30,61 @@ namespace Problems_pool_1___probleme_cu_numere
             nrcrescatoare5();
             //CMMDCMMM();
             //factoriprimi();
+            cifrerepeta();
+            fractieinzecimal();
+            //ghicirenr();
+        }
+
+        /// <summary>
+        /// Ghiciti un numar intre 1 si 1024 prin intrebari de forma "numarul este mai mare sau egal decat x?".
+        /// </summary>
+        private static void ghicirenr()
+        {
+            int x, n;
+
+            Random rnd = new Random();
+            x = rnd.Next(1, 1024);
+
+            do
+            {
+                Console.WriteLine("Introduceti un numar cuprins intre 1 si 1024");
+                n = int.Parse(Console.ReadLine());
+                if (n > x)
+                    Console.WriteLine("Numarul introdus este prea mare");
+                if (n < x)
+                    Console.WriteLine("Numarul introdus este prea mic");
+            } 
+            while (n != x);
+            Console.WriteLine("Ati ghicit numarul!");
+        }
+
+        /// <summary>
+        /// Afisati fractia m/n in format zecimal, cu perioada intre paranteze (daca e cazul). 
+        /// Exemplu: 13/30 = 0.4(3).
+        /// </summary>
+        private static void fractieinzecimal()
+        {
+            double m, n, x;
+
+            Console.WriteLine("Introduceti doua numere");
+            m = int.Parse(Console.ReadLine());
+            n = int.Parse(Console.ReadLine());
+
+            x = m / n;
+
+            Console.WriteLine($"Fractia in format zecimal este {x}");
+        }
+
+        /// <summary>
+        /// Determinati daca un numar e format doar cu 2 cifre care se pot repeta.
+        /// De ex. 23222 sau 9009000 sunt astfel de numere, pe cand 593 si 4022 nu sunt.
+        /// </summary>
+        private static void cifrerepeta()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
         }
 
         /// <summary>
