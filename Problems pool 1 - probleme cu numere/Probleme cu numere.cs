@@ -448,7 +448,7 @@ namespace Problems_pool_1___probleme_cu_numere
             Console.WriteLine("Introduceti un an");
             y = int.Parse(Console.ReadLine());
 
-            if (y % 4 == 0 && y % 100 != 0)
+            if ((y % 4 == 0 && y % 100 != 0) || (y % 400 == 0))
             {
                 Console.WriteLine("Anul este bisect");
             }
