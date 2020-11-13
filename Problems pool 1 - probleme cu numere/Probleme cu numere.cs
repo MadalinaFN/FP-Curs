@@ -27,7 +27,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //anibisecti();
             //palindrom();
             //nrcrescatoare3();
-            nrcrescatoare5();
+            //////////nrcrescatoare5();
             //CMMDCMMM();
             //factoriprimi();
             cifrerepeta();
@@ -81,10 +81,22 @@ namespace Problems_pool_1___probleme_cu_numere
         /// </summary>
         private static void cifrerepeta()
         {
-            int n;
+            int n, a, b, c, s, z, u;
 
-            Console.WriteLine("Introduceti un numar");
+            Console.WriteLine("Introduceti un numar de 6 cifre");
             n = int.Parse(Console.ReadLine());
+
+            a = n / 100000;
+            b = (n / 10000) % 10;
+            c = (n / 1000) % 10;
+            s = (n / 100) % 10;
+            z = (n / 10) % 10;
+            u = n % 10;
+
+            if ((a == b || a == c || a == s || a == z || a == u) && (b != a || c != a || s != a || z != a || u != a) && (b == c || b == s || b == z || b == u))
+                Console.WriteLine("Numarul e format doar cu 2 cifre care se pot repeta");
+            else
+                Console.WriteLine("Numarul nu e format doar cu 2 cifre care se pot repeta");
         }
 
         /// <summary>
@@ -153,9 +165,8 @@ namespace Problems_pool_1___probleme_cu_numere
             d = int.Parse(Console.ReadLine());
             e = int.Parse(Console.ReadLine());
 
-            int min, med1, med, med2, max;
+            int min = a, med1 = a, med = a, med2 = a, max = a;
 
-            min = a;
             if (b < min)
                 min = b;
             if (c < min)
@@ -165,7 +176,6 @@ namespace Problems_pool_1___probleme_cu_numere
             if (e < min)
                 min = e;
 
-            max = a;
             if (b > max)
                 max = b;
             if (c > max)
@@ -175,9 +185,35 @@ namespace Problems_pool_1___probleme_cu_numere
             if (e > max)
                 max = e;
 
-            
+            if ((a > min && a < max && a < med && a < med2) || (a > min && a < max && a > med && a > med1))
+            {
+                med1 = a;
+                med2 = a;
+            }
+            if ((b > min && b < max && b < med && b < med2) || (b > min && b < max && b > med && b > med1))
+            {
+                med1 = b;
+                med2 = b;
+            }
+            else if ((c > min && c < max && c < med && c < med2) || (c > min && c < max && c > med && c > med1))
+            {
+                med1 = c;
+                med2 = c;
+            }
+            else if ((d > min && d < max && d < med && d < med2) || (d > min && d < max && d > med && d > med1))
+            {
+                med1 = d;
+                med2 = d;
+            }
+            else if ((e > min && e < max && e < med && e < med2) || (e > min && e < max && e > med && e > med1))
+            {
+                med1 = e;
+                med2 = e;
+            }
 
-            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {min}  {max}");
+            med = a + b + c + d + e - min - max - med1 - med2;
+
+            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {min} {med1} {med} {med2} {max}");
         }
 
         /// <summary>
