@@ -30,7 +30,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //////////nrcrescatoare5();
             //CMMDCMMM();
             //factoriprimi();
-            cifrerepeta();
+            //cifrerepeta();
             fractieinzecimal();
             //ghicirenr();
         }
