@@ -10,7 +10,49 @@ namespace Problems_pool_3___probleme_cu_tablouri
     {
         static void Main(string[] args)
         {
-            RotireStanga();
+            //RotireStanga();
+            //RotireStangaK();
+        }
+
+        /// <summary>
+        /// Rotire k. Se da un vector cu n elemente. Rotiti elementele vectorului cu k pozitii spre stanga.
+        /// </summary>
+        private static void RotireStangaK()
+        {
+            int k = 3;
+            int n = 10;
+            int[] v = new int[n];
+
+            Random rnd = new Random();
+            for (int i = 0; i < v.Length; i++)
+            {
+                v[i] = rnd.Next(0, 100);
+            }
+
+            Console.WriteLine("Inainte:");
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
+
+            for (int j = 0; j < k; j++)
+            {
+                int aux;
+                aux = v[0];
+                for (int i = 1; i < v.Length; i++)
+                {
+                    v[i - 1] = v[i];
+                }
+                v[v.Length - 1] = aux;
+            }
+
+            Console.WriteLine("Dupa:");
+            foreach (var item in v)
+            {
+                Console.Write($"{item} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
