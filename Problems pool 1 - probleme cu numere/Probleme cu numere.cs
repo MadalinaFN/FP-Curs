@@ -31,7 +31,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //CMMDCMMM();
             //factoriprimi();
             //cifrerepeta();
-            fractieinzecimal();
+            //fractieinzecimal();
             //ghicirenr();
         }
 
