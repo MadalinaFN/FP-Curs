@@ -27,7 +27,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //anibisecti();
             //palindrom();
             //nrcrescatoare3();
-            //////////nrcrescatoare5();
+            //nrcrescatoare5();
             //CMMDCMMM();
             //factoriprimi();
             //cifrerepeta();
@@ -159,61 +159,38 @@ namespace Problems_pool_1___probleme_cu_numere
             int a, b, c, d, e;
 
             Console.WriteLine("Introduceti cinci numere");
+
             a = int.Parse(Console.ReadLine());
+
             b = int.Parse(Console.ReadLine());
+            (a, b) = (Math.Min(a, b), Math.Max(a, b));
+
             c = int.Parse(Console.ReadLine());
+            (a, b) = (Math.Min(a, b), Math.Max(a, b));
+            (b,c) = (Math.Min(b, c), Math.Max(b, c));
+            (a, c) = (Math.Min(a, c), Math.Max(a, c));
+
             d = int.Parse(Console.ReadLine());
+            (a, b) = (Math.Min(a, b), Math.Max(a, b));
+            (b, c) = (Math.Min(b, c), Math.Max(b, c));
+            (a, c) = (Math.Min(a, c), Math.Max(a, c));
+            (c, d) = (Math.Min(c, d), Math.Max(c, d));
+            (a, d) = (Math.Min(a, d), Math.Max(a, d));
+            (b, d) = (Math.Min(b, d), Math.Max(b, d));
+
             e = int.Parse(Console.ReadLine());
+            (a, b) = (Math.Min(a, b), Math.Max(a, b));
+            (b, c) = (Math.Min(b, c), Math.Max(b, c));
+            (a, c) = (Math.Min(a, c), Math.Max(a, c));
+            (c, d) = (Math.Min(c, d), Math.Max(c, d));
+            (a, d) = (Math.Min(a, d), Math.Max(a, d));
+            (b, d) = (Math.Min(b, d), Math.Max(b, d));
+            (d, e) = (Math.Min(d, e), Math.Max(d, e));
+            (a, e) = (Math.Min(a, e), Math.Max(a, e));
+            (b, e) = (Math.Min(b, e), Math.Max(b, e));
+            (c, e) = (Math.Min(c, e), Math.Max(c, e));
 
-            int min = a, med1 = a, med = a, med2 = a, max = a;
-
-            if (b < min)
-                min = b;
-            if (c < min)
-                min = c;
-            if (d < min)
-                min = d;
-            if (e < min)
-                min = e;
-
-            if (b > max)
-                max = b;
-            if (c > max)
-                max = c;
-            if (d > max)
-                max = d;
-            if (e > max)
-                max = e;
-
-            if ((a > min && a < max && a < med && a < med2) || (a > min && a < max && a > med && a > med1))
-            {
-                med1 = a;
-                med2 = a;
-            }
-            if ((b > min && b < max && b < med && b < med2) || (b > min && b < max && b > med && b > med1))
-            {
-                med1 = b;
-                med2 = b;
-            }
-            else if ((c > min && c < max && c < med && c < med2) || (c > min && c < max && c > med && c > med1))
-            {
-                med1 = c;
-                med2 = c;
-            }
-            else if ((d > min && d < max && d < med && d < med2) || (d > min && d < max && d > med && d > med1))
-            {
-                med1 = d;
-                med2 = d;
-            }
-            else if ((e > min && e < max && e < med && e < med2) || (e > min && e < max && e > med && e > med1))
-            {
-                med1 = e;
-                med2 = e;
-            }
-
-            med = a + b + c + d + e - min - max - med1 - med2;
-
-            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {min} {med1} {med} {med2} {max}");
+            Console.WriteLine($"Numerele ordonanate in ordine crescatoare sunt {a} {b} {c} {d} {e}");
         }
 
         /// <summary>
