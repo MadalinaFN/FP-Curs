@@ -11,7 +11,30 @@ namespace Problems_pool_2___probleme_cu_secvente
         static void Main(string[] args)
         {
             //nrpare();
-            nrNegZeroPoz();
+            //nrNegZeroPoz();
+            SumSiProd();
+        }
+
+        /// <summary>
+        /// Calculati suma si produsul numerelor de la 1 la n.
+        /// </summary>
+        private static void SumSiProd()
+        {
+            int n, x, suma = 0, produs = 1;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                suma = suma + x;
+                produs = produs * x;
+            }
+            Console.WriteLine($"Suma numerelor este {suma}");
+            Console.WriteLine($"Produsul numerelor este {produs}");
         }
 
         /// <summary>
