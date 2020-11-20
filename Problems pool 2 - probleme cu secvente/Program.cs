@@ -15,8 +15,8 @@ namespace Problems_pool_2___probleme_cu_secvente
             //SumSiProd();
             //PozitieA();
             //nrEgaleCuPoz();
-            //nrCrescatoare();
-            MaxMin();
+            nrCrescatoare();
+            //MaxMin();
         }
 
         /// <summary>
@@ -50,17 +50,24 @@ namespace Problems_pool_2___probleme_cu_secvente
         /// </summary>
         private static void nrCrescatoare()
         {
-            int n, x = 0;
+            int n, a, b, z = 1, cresc = 1;
 
             Console.WriteLine("Cate numere are sirul?");
             n = int.Parse(Console.ReadLine());
 
-            for (int i = 0; i < n; i++)
+            while (z <= n)
             {
-                Console.WriteLine($"Introduceti al {i}-lea numar");
-                x = int.Parse(Console.ReadLine());
+                Console.WriteLine("Introduceti numerele");
+                a = int.Parse(Console.ReadLine());
+                Console.WriteLine("Introduceti numerele");
+                b = int.Parse(Console.ReadLine());
+
+                if (b < a)
+                    cresc = 0;
+                a = b;
+                z++;
             }
-            if (x < x++)
+            if (cresc == 1)
                 Console.WriteLine("Numerele sunt in ordine crescatoare");
             else
                 Console.WriteLine("Numerele nu sunt in ordine crescatoare");
@@ -140,7 +147,7 @@ namespace Problems_pool_2___probleme_cu_secvente
         }
 
         /// <summary>
-        /// Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive.
+        /// Se da o secventa de n numere. Sa se determine cate sunt negative, cate sunt zero si cate sunt pozitive.
         /// </summary>
         private static void nrNegZeroPoz()
         {
