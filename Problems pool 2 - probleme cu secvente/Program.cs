@@ -14,7 +14,56 @@ namespace Problems_pool_2___probleme_cu_secvente
             //nrNegZeroPoz();
             //SumSiProd();
             //PozitieA();
-            nrEgaleCuPoz();
+            //nrEgaleCuPoz();
+            //nrCrescatoare();
+            MaxMin();
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Sa se determine cea mai mare si cea mai mica valoare din secventa.
+        /// </summary>
+        private static void MaxMin()
+        {
+            int n, x, max, min;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            max = -int.MaxValue;
+            min = Int32.MaxValue;
+            
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x > max)
+                    max = x;
+                if (x < min)
+                    min = x;
+            }
+            Console.WriteLine($"Cea mai mare valoare este {max} si cea mai mica este {min}");
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Sa se determine daca numerele din secventa sunt in ordine crescatoare.
+        /// </summary>
+        private static void nrCrescatoare()
+        {
+            int n, x = 0;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+            }
+            if (x < x++)
+                Console.WriteLine("Numerele sunt in ordine crescatoare");
+            else
+                Console.WriteLine("Numerele nu sunt in ordine crescatoare");
         }
 
         /// <summary>
