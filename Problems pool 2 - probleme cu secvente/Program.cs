@@ -12,7 +12,37 @@ namespace Problems_pool_2___probleme_cu_secvente
         {
             //nrpare();
             //nrNegZeroPoz();
-            SumSiProd();
+            //SumSiProd();
+            PozitieA();
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Determinati pe ce pozitie se afla in secventa un numar a. 
+        /// Se considera ca primul element din secventa este pe pozitia zero. 
+        /// Daca numarul nu se afla in secventa raspunsul va fi -1.
+        /// </summary>
+        private static void PozitieA()
+        {
+            int n, a, x, i;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine($"Introduceti numarul a carui pozitie vreti sa o aflati");
+            a = int.Parse(Console.ReadLine());
+
+            for (i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                a = x;
+                
+                Console.WriteLine($"Numarul {x} se afla in pozitia {i}");
+
+                if (a != x)
+                    Console.WriteLine("-1");
+            }
         }
 
         /// <summary>
