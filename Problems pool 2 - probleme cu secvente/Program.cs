@@ -15,7 +15,7 @@ namespace Problems_pool_2___probleme_cu_secvente
             //SumSiProd();
             //PozitieA();
             //nrEgaleCuPoz();
-            nrCrescatoare();
+            //nrCrescatoare();
             //MaxMin();
         }
 
