@@ -10,7 +10,35 @@ namespace Problems_pool_2___probleme_cu_secvente
     {
         static void Main(string[] args)
         {
-            nrpare();
+            //nrpare();
+            nrNegZeroPoz();
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Sa se determina cate sunt negative, cate sunt zero si cate sunt pozitive.
+        /// </summary>
+        private static void nrNegZeroPoz()
+        {
+            int n, x, contor1 = 0, contor2 = 0, contor3 = 0;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x < 0)
+                    contor1++;
+                if (x == 0)
+                    contor2++;
+                if (x > 0)
+                    contor3++;
+            }
+            Console.WriteLine($"Sunt {contor1} numere negative in aceasta secventa de numere");
+            Console.WriteLine($"Sunt {contor2} zerouri in aceasta secventa de numere");
+            Console.WriteLine($"Sunt {contor3} numere pozitive in aceasta secventa de numere");
         }
 
         /// <summary>
