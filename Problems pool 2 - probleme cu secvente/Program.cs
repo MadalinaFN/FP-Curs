@@ -13,7 +13,30 @@ namespace Problems_pool_2___probleme_cu_secvente
             //nrpare();
             //nrNegZeroPoz();
             //SumSiProd();
-            PozitieA();
+            //PozitieA();
+            nrEgaleCuPoz();
+        }
+
+        /// <summary>
+        /// Cate elemente dintr-o secventa de n numere sunt egale cu pozitia pe care apar in secventa. 
+        /// Se considera ca primul element din secventa este pe pozitia 0. 
+        /// </summary>
+        private static void nrEgaleCuPoz()
+        {
+            int n, x, contor = 0;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x == i)
+                    contor++;
+            }
+            Console.WriteLine($"Sunt {contor} numere egale cu pozitia pe care apar in secventa");
         }
 
         /// <summary>
