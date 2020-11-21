@@ -24,6 +24,41 @@ namespace Problems_pool_2___probleme_cu_secvente
             ////nrConsecutiveDifDe0();
             //SecRotita();
             //MonRotita();
+            SecBitonica();
+        }
+
+        /// <summary>
+        /// O secventa bitonica este o secventa de numere care incepe monoton crescator 
+        /// si continua monoton descrecator. 
+        /// De ex. 1,2,2,3,5,4,4,3 este o secventa bitonica. 
+        /// Se da o secventa de n numere. Sa se determine daca este bitonica.
+        /// </summary>
+        private static void SecBitonica()
+        {
+            int n, x, x1;
+            bool cresc = true;
+            bool bit = true;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Introduceti primul numar");
+            x1 = int.Parse(Console.ReadLine());
+
+            for (int i = 2; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x1 > x)
+                    cresc = false;
+                if ((x1 < x || i == 1) && !cresc)
+                    bit = false;
+                x1 = x;
+            }
+            if (!cresc && bit)
+                Console.WriteLine("Secventa este bitonica");
+            else
+                Console.WriteLine("Secventa nu este bitonica");
         }
 
         /// <summary>
