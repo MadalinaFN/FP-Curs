@@ -22,6 +22,46 @@ namespace Problems_pool_2___probleme_cu_secvente
             ////nrConsecutive();
             //SumInv();
             ////nrConsecutiveDifDe0();
+            SecRotita();
+        }
+
+        /// <summary>
+        /// O secventa crescatoare rotita este o secventa de numere care este in ordine crescatoare sau 
+        /// poate fi transformata intr-o secventa in ordine crescatoare prin rotiri succesive 
+        /// (rotire = primul element devine ultimul). 
+        /// Determinati daca o secventa de n numere este o secventa crescatoare rotita.
+        /// </summary>
+        private static void SecRotita()
+        {
+            int n, x, x1, x2;
+            bool cresc = true;
+            bool rot = true;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Introduceti primul numar");
+            x1 = int.Parse(Console.ReadLine());
+
+            x2 = x1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x1 > x)
+                    cresc = false;
+                if ((x1 > x || x2 < x) && !cresc)
+                    rot = false;
+
+                if (cresc && x2 > x)
+                    x2 = x;
+                x1 = x;
+            }
+            if (cresc || rot)
+                Console.WriteLine("Secventa este crescatoare rotita");
+            else
+                Console.WriteLine("Secventa nu este crescatoare rotita");
         }
 
         /// <summary>
