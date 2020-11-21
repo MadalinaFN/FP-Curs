@@ -19,13 +19,55 @@ namespace Problems_pool_2___probleme_cu_secvente
             //MaxMin();
             //Fibonacci();
             //Monotona();
-            ////nrConsecutive();
+            nrConsecutive();
             //SumInv();
-            ////nrConsecutiveDifDe0();
+            nrConsecutiveDifDe0();
             //SecRotita();
             //MonRotita();
             //SecBitonica();
-            BitRotita();
+            //BitRotita();
+            //Paranteze();
+        }
+
+        /// <summary>
+        /// Se da o secventa de 0 si 1, unde 0 inseamna paranteza deschisa si 1 inseamna paranteza inchisa. 
+        /// Determinati daca secventa reprezinta o secventa de paranteze corecta si, daca este, 
+        /// determinati nivelul maxim de incuibare a parantezelor. 
+        /// De exemplu 0 1 0 0 1 0 1 1 este corecta si are nivelul maxim de incuibare 2 
+        /// pe cand 0 0 1 1 1 0 este incorecta. 
+        /// </summary>
+        private static void Paranteze()
+        {
+            int n, x, y = 0, z = 1, a = 0, b = -1;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Introduceti doar numerele 0 sau 1, 0 fiind paranteza deschisa si 1 inchisa");
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x == 0)
+                    y++;
+                else if (x == 1 && y > 0)
+                    y--;
+                else
+                    z = 0;
+
+                if (x == 0)
+                    a++;
+                else
+                    a--;
+                if (a > b)
+                    b = a;
+            }
+            if (z != 0 && y == 0)
+                Console.WriteLine($"Secventa este o secventa de paranteze corecta si nivelul maxim de incuibare este {b}");
+            else
+                Console.WriteLine("Secventa nu este o secventa de paranteze corecta");
         }
 
         /// <summary>
