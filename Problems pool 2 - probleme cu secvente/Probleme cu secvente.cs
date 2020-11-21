@@ -24,7 +24,54 @@ namespace Problems_pool_2___probleme_cu_secvente
             ////nrConsecutiveDifDe0();
             //SecRotita();
             //MonRotita();
-            SecBitonica();
+            //SecBitonica();
+            BitRotita();
+        }
+
+        /// <summary>
+        /// O secventa bitonica rotita este o secventa bitonica sau una ca poate fi transformata 
+        /// intr-o secventa bitonica prin rotiri succesive (rotire = primul element devine ultimul). 
+        /// Se da o secventa de n numere. Se cere sa se determine daca este o secventa bitonica rotita.
+        /// </summary>
+        private static void BitRotita()
+        {
+            int n, x, x1, x2;
+            bool cresc = true;
+            bool desc = true;
+            bool rot = true;
+            bool rotc = true;
+            bool rotd = true;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Introduceti primul numar");
+            x1 = int.Parse(Console.ReadLine());
+
+            x2 = x1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x1 > x)
+                    cresc = false;
+                if (x1 < x)
+                    desc = false;
+                if (!rotd && ((x1 < x) || (x2 > x)))
+                    rot = false;
+                if (!cresc && ((x1 < x) || (i == 1)))
+                    rotc = false;
+                if (!desc && x1 > x)
+                    rotd = false;
+                if (x2 < x && desc)
+                    x2 = x;
+                x1 = x;
+            }
+            if (rot || rotc || rotd)
+                Console.WriteLine("Secventa este bitonica rotita");
+            else
+                Console.WriteLine("Secventa nu este bitonica rotita");
         }
 
         /// <summary>
