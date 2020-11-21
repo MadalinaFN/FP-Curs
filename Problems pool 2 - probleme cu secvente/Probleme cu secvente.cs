@@ -19,6 +19,79 @@ namespace Problems_pool_2___probleme_cu_secvente
             //MaxMin();
             //Fibonacci();
             //Monotona();
+            ////nrConsecutive();
+            //SumInv();
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Se cere sa se caculeze suma inverselor acestor numere.
+        /// </summary>
+        private static void SumInv()
+        {
+            int n, a, s = 0;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                a = int.Parse(Console.ReadLine());
+
+                s = s + inv(a);
+            }
+
+            Console.WriteLine($"Suma inverselor este {s}");
+        }
+        static int inv(int n)
+        {
+            int inv = 0;
+            while (n != 0)
+            {
+                inv = inv * 10 + n % 10;
+                n = n / 10;
+            }
+            return inv;
+        }
+
+        /// <summary>
+        /// Se da o secventa de n numere. Care este numarul maxim de numere consecutive egale din secventa.
+        /// </summary>
+        private static void nrConsecutive()
+        {
+            int n, a, b, c1 = 1, c2 = 1, m1 = 1, m2 = 1, m3, i;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti numerele");
+            a = int.Parse(Console.ReadLine());
+
+            for (i = 2; i <= n; i++)
+            {
+                b = int.Parse(Console.ReadLine());
+
+                if (a == b)
+                    c1++;
+                else
+                {
+                    if (c1 >= m1)
+                    {
+                        m1 = c1;
+                        m2 = c2;
+                        m3 = a;
+                    }
+                    c1 = 1;
+                    c2 = i;
+                }
+                a = b;
+            }
+            if (c1 >= m1)
+            {
+                m1 = c1;
+                m2 = c2;
+                m3 = a;
+            }
+            Console.WriteLine($"Numarul maxim de numere consecutive egale din secventa este {m2 + m1 - 1}");
         }
 
         /// <summary>
