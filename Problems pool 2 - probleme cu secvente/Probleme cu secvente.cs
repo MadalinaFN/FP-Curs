@@ -17,7 +17,44 @@ namespace Problems_pool_2___probleme_cu_secvente
             //nrEgaleCuPoz();
             //nrCrescatoare();
             //MaxMin();
-            Fibonacci();
+            //Fibonacci();
+            //Monotona();
+        }
+
+        /// <summary>
+        /// Sa se determine daca o secventa de n numere este monotona. 
+        /// Secventa monotona = secventa monoton crescatoare sau monoton descrescatoare.
+        /// </summary>
+        private static void Monotona()
+        {
+            int n, a, b, d = 0, i = 1;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti numerele");
+            a = int.Parse(Console.ReadLine());
+
+            while (i < n)
+            {
+                b = int.Parse(Console.ReadLine());
+
+                if (b > a)
+                    if (d < 0)
+                        d = 2;
+                    else
+                        d = 1;
+                else if (b < a)
+                    if (d > 0)
+                        d = 2;
+                    else
+                        d = -1;
+                a = b;
+                i++;
+            }
+            if (d < 2)
+                Console.WriteLine("Secventa este monotona");
+            else
+                Console.WriteLine("Secventa nu este monotona");
         }
 
         /// <summary>
@@ -76,12 +113,11 @@ namespace Problems_pool_2___probleme_cu_secvente
 
             Console.WriteLine("Cate numere are sirul?");
             n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti numerele");
+            a = int.Parse(Console.ReadLine());
 
-            while (z <= n)
+            while (z < n)
             {
-                Console.WriteLine("Introduceti numerele");
-                a = int.Parse(Console.ReadLine());
-                Console.WriteLine("Introduceti numerele");
                 b = int.Parse(Console.ReadLine());
 
                 if (b < a)
