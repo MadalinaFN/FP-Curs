@@ -21,6 +21,35 @@ namespace Problems_pool_2___probleme_cu_secvente
             //Monotona();
             ////nrConsecutive();
             //SumInv();
+            ////nrConsecutiveDifDe0();
+        }
+
+        /// <summary>
+        /// Cate grupuri de numere consecutive diferite de zero sunt intr-o secventa de n numere. 
+        /// Considerati fiecare astfel de grup ca fiind un cuvant, zero fiind delimitator de cuvinte. 
+        /// De ex. pentru secventa 1, 2, 0, 3, 4, 5, 0, 0, 6, 7, 0, 0 raspunsul este 3. 
+        /// </summary>
+        private static void nrConsecutiveDifDe0()
+        {
+            int n, a, b = 0, c = 0;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                a = int.Parse(Console.ReadLine());
+
+                if (a == 0)
+                    c = 0;
+                if (c == 0)
+                {
+                    b++;
+                    c = 1;
+                }
+            }
+            Console.WriteLine($"In aceasta secventa sunt {b} numere diferite de 0");
         }
 
         /// <summary>
