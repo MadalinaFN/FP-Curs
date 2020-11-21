@@ -22,7 +22,55 @@ namespace Problems_pool_2___probleme_cu_secvente
             ////nrConsecutive();
             //SumInv();
             ////nrConsecutiveDifDe0();
-            SecRotita();
+            //SecRotita();
+            //MonRotita();
+        }
+
+        /// <summary>
+        /// O secventa monotona rotita este o secventa de numere monotona sau 
+        /// poate fi transformata intr-o secventa montona prin rotiri succesive. 
+        /// Determinati daca o secventa de n numere este o secventa monotona rotita.
+        /// </summary>
+        private static void MonRotita()
+        {
+            int n, x, x1, x2, x3;
+            bool cresc = true;
+            bool desc = true;
+            bool rotc = true;
+            bool rotd = true;
+
+            Console.WriteLine("Cate numere are sirul?");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Introduceti primul numar");
+            x1 = int.Parse(Console.ReadLine());
+
+            x2 = x1;
+            x3 = x1;
+
+            for (int i = 2; i <= n; i++)
+            {
+                Console.WriteLine($"Introduceti al {i}-lea numar");
+                x = int.Parse(Console.ReadLine());
+
+                if (x1 > x)
+                    cresc = false;
+                if (x1 < x)
+                    desc = false;
+                if ((x1 > x || x2 < x) && !cresc)
+                    rotc = false;
+                if ((x1 < x || x3 > x) && !desc)
+                    rotd = false;
+
+                if (cresc && x2 > x)
+                    x2 = x;
+                if (desc && x3 < x)
+                    x3 = x;
+                x1 = x;
+            }
+            if (cresc || desc || rotc || rotd)
+                Console.WriteLine("Secventa este monotona rotita");
+            else
+                Console.WriteLine("Secventa nu este monotona rotita");
         }
 
         /// <summary>
