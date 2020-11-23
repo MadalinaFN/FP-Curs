@@ -21,7 +21,7 @@ namespace Problems_pool_2___probleme_cu_secvente
             //Monotona();
             nrConsecutive();
             //SumInv();
-            nrConsecutiveDifDe0();
+            //////nrConsecutiveDifDe0();
             //SecRotita();
             //MonRotita();
             //SecBitonica();
@@ -300,39 +300,30 @@ namespace Problems_pool_2___probleme_cu_secvente
         /// </summary>
         private static void nrConsecutive()
         {
-            int n, a, b, c1 = 1, c2 = 1, m1 = 1, m2 = 1, m3, i;
+            int n, a, b, sa = 1, sm = 1, i;
 
             Console.WriteLine("Cate numere are sirul?");
             n = int.Parse(Console.ReadLine());
             Console.WriteLine("Introduceti numerele");
             a = int.Parse(Console.ReadLine());
 
-            for (i = 2; i <= n; i++)
+            for (i = 1; i < n; i++)
             {
                 b = int.Parse(Console.ReadLine());
 
-                if (a == b)
-                    c1++;
+                if (b == a)
+                {
+                    sa++;
+                    if (sa > sm)
+                        sm = sa;
+                }
                 else
                 {
-                    if (c1 >= m1)
-                    {
-                        m1 = c1;
-                        m2 = c2;
-                        m3 = a;
-                    }
-                    c1 = 1;
-                    c2 = i;
+                    a = b;
+                    sa = 1;
                 }
-                a = b;
             }
-            if (c1 >= m1)
-            {
-                m1 = c1;
-                m2 = c2;
-                m3 = a;
-            }
-            Console.WriteLine($"Numarul maxim de numere consecutive egale din secventa este {m2 + m1 - 1}");
+            Console.WriteLine($"Numarul maxim de numere consecutive egale din secventa este {sm}");
         }
 
         /// <summary>
