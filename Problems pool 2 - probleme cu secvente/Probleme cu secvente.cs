@@ -19,9 +19,9 @@ namespace Problems_pool_2___probleme_cu_secvente
             //MaxMin();
             //Fibonacci();
             //Monotona();
-            nrConsecutive();
+            //nrConsecutive();
             //SumInv();
-            //////nrConsecutiveDifDe0();
+            //nrConsecutiveDifDe0();
             //SecRotita();
             //MonRotita();
             //SecBitonica();
@@ -243,7 +243,7 @@ namespace Problems_pool_2___probleme_cu_secvente
         /// </summary>
         private static void nrConsecutiveDifDe0()
         {
-            int n, a, b = 0, c = 0;
+            int n, a, g = 0, b = 0;
 
             Console.WriteLine("Cate numere are sirul?");
             n = int.Parse(Console.ReadLine());
@@ -254,14 +254,17 @@ namespace Problems_pool_2___probleme_cu_secvente
                 a = int.Parse(Console.ReadLine());
 
                 if (a == 0)
-                    c = 0;
-                if (c == 0)
+                    b = 0;
+                else
                 {
-                    b++;
-                    c = 1;
-                }
+                    if (b == 0)
+                    {
+                        g++;
+                        b = 1;
+                    }
+                }  
             }
-            Console.WriteLine($"In aceasta secventa sunt {b} numere diferite de 0");
+            Console.WriteLine($"In aceasta secventa sunt {g} grupuri de numere diferite de 0");
         }
 
         /// <summary>
