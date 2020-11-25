@@ -416,39 +416,30 @@ namespace Problems_pool_1___probleme_cu_numere
         /// </summary>
         private static void akacifra()
         {
-            int c, k, n = 580201;
+            int n, k;
+            Console.WriteLine("Introduceti un numar");
+            n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"Se da numarul {n}");
-            Console.WriteLine("Introduceti a k-a cifra pe care vreti sa o afisati");
+            Console.WriteLine("Introduceti a k-pa cifra pe care vreti sa o afisati");
             k = int.Parse(Console.ReadLine());
 
-            switch (k)
+            var t = new Program();
+            Console.WriteLine($"A {k}-a cifra este {t.kcifra(n, k)}");
+        }
+
+        public int kcifra(int a, int k)
+        {
+            int uc, c = 0, cifra = 0;
+
+            while (a != 0)
             {
-                case 1:
-                    c = n / 100000;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
-                case 2:
-                    c = (n / 10000) % 10;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
-                case 3:
-                    c = (n / 1000) % 10;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
-                case 4:
-                    c = (n / 100) % 10;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
-                case 5:
-                    c = (n / 10) % 10;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
-                case 6:
-                    c = n % 10;
-                    Console.WriteLine($"A {k}-a cifra este {c}");
-                    break;
+                uc = a % 10;
+                c++;
+                if (c == k) 
+                    cifra = uc;
+                a = a / 10;
             }
+            return cifra;
         }
 
         /// <summary>
