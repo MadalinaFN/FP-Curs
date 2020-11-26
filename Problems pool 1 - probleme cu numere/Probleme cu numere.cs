@@ -31,7 +31,7 @@ namespace Problems_pool_1___probleme_cu_numere
             //CMMDCMMM();
             //factoriprimi();
             //cifrerepeta();
-            //fractieinzecimal();
+            fractieinzecimal();
             //ghicirenr();
         }
 
@@ -64,15 +64,57 @@ namespace Problems_pool_1___probleme_cu_numere
         /// </summary>
         private static void fractieinzecimal()
         {
-            double m, n, x;
+            int m, n, x, intr, fract, cifra, rest;
+            bool periodic = false;
 
             Console.WriteLine("Introduceti doua numere");
             m = int.Parse(Console.ReadLine());
             n = int.Parse(Console.ReadLine());
 
-            x = m / n;
+            intr = m / n;
+            fract = m % n;
+            Console.Write($"{intr},");
 
-            Console.WriteLine($"Fractia in format zecimal este {x}");
+            List<int> resturi = new List<int>();
+            List<int> cifre = new List<int>();
+            resturi.Add(fract);
+
+            do
+            {
+                cifra = fract * 10 / n;
+                cifre.Add(cifra);
+                rest = fract * 10 % n;
+                if (!resturi.Contains(rest))
+                {
+                    resturi.Add(rest);
+                }
+                else
+                {
+                    periodic = true;
+                    break;
+                }
+                fract = rest;
+            } while (rest != 0);
+
+            if (!periodic)
+            {
+                foreach (var item in cifre)
+                {
+                    Console.Write(item);
+                }
+            }
+            else
+            {
+                for (int i = 0; i < cifre.Count; i++)
+                {
+                    if (resturi[i] == rest)
+                    {
+                        Console.Write("(");
+                    }
+                    Console.Write(cifre[i]);
+                }
+                Console.WriteLine(")");
+            }
         }
 
         /// <summary>
