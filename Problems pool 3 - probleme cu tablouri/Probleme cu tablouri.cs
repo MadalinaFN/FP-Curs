@@ -14,6 +14,29 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //RotireStangaK();
             //InsertionSort();
             //SelectionSort();
+            Suma();
+        }
+
+        /// <summary>
+        /// Calculati suma elementelor unui vector de n numere citite de la tastatura. Rezultatul se va afisa pe ecran.
+        /// </summary>
+        private static void Suma()
+        {
+            int n, suma = 0;
+            
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+            
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+
+                suma = suma + v[i];
+            }
+            Console.WriteLine($"Suma elementelor vectorului este {suma}");
         }
 
         /// <summary>
