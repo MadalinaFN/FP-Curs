@@ -16,7 +16,46 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //SelectionSort();
             //Suma();
             //PozitieK();
-            CmmCmM();
+            //CmmCmM();
+            CmmCmM2();
+        }
+
+        /// <summary>
+        /// Deteminati printr-o singura parcurgere, cea mai mica si cea mai mare valoare 
+        /// dintr-un vector si de cate ori apare acestea.
+        /// </summary>
+        private static void CmmCmM2()
+        {
+            int n, cmm, cmM, contor1 = 0, contor2 = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            cmm = v[0];
+            cmM = v[0];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+
+                if (v[i] < cmm || v[i] == v[0])
+                    cmm = v[i];
+                if (v[i] == cmm)
+                    contor1++;
+                else if (v[i] > cmM || v[i] == v[0])
+                    cmM = v[i];
+                if (v[i] == cmM)
+                {
+                    contor2++;
+                    if (v[i - 1] < cmM && v[i - 1] > cmm)
+                        contor2--;
+                }
+            }
+            Console.WriteLine($"Cea mai mica valoare a vectorului este {cmm} si apare de {contor1} ori, " +
+                $"iar cea mai mare este {cmM} si apare de {contor2} ori");
         }
 
         /// <summary>
