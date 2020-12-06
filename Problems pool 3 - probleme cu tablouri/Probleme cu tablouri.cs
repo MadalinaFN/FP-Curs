@@ -18,7 +18,40 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //PozitieK();
             //CmmCmM();
             //CmmCmM2();
-            EinpozK();
+            //EinpozK();
+            //StergeK();
+        }
+
+        /// <summary>
+        /// Se da un vector cu n elemente si o pozitie din vector k. 
+        /// Se cere sa se stearga din vector elementul de pe pozitia k. 
+        /// Prin stergerea unui element, toate elementele din dreapta lui se muta cu o pozitie spre stanga.
+        /// </summary>
+        private static void StergeK()
+        {
+            int n, k1, k;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti pozitia k");
+            k1 = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (k = 0; k < n; k++)
+            {
+                v[k] = int.Parse(Console.ReadLine());
+            }
+            for (k = k1; k < n; k++)
+            {
+                v[k - 1] = v[k];
+            }
+            n--;
+            for (k = 0; k < n; k++)
+            {
+                Console.Write($"{v[k]} ");
+            }
         }
 
         /// <summary>
