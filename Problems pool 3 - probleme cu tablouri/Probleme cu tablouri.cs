@@ -17,7 +17,42 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //Suma();
             //PozitieK();
             //CmmCmM();
-            CmmCmM2();
+            //CmmCmM2();
+            EinpozK();
+        }
+
+        /// <summary>
+        /// Se da un vector cu n elemente, o valoare e si o pozitie din vector k. 
+        /// Se cere sa se insereze valoarea e in vector pe pozitia k. 
+        /// Primul element al vectorului se considera pe pozitia zero.
+        /// </summary>
+        private static void EinpozK()
+        {
+            int n, e, k, k1;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti valoarea pentru e");
+            e = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti pozitia k");
+            k1 = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (k = 0; k < n; k++)
+            {
+                v[k] = int.Parse(Console.ReadLine());
+            }
+            for (k = 0; k < n; k++)
+            {
+                if (k == k1)
+                {
+                    v[k1] = v[k];
+                    v[k] = e;
+                }
+                Console.Write($"{v[k]} ");
+            }
         }
 
         /// <summary>
