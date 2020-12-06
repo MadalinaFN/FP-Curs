@@ -15,7 +15,44 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //InsertionSort();
             //SelectionSort();
             //Suma();
-            PozitieK();
+            //PozitieK();
+            CmmCmM();
+        }
+
+        /// <summary>
+        /// Sa se determine pozitiile dintr-un vector pe care apar cel mai mic 
+        /// si cel mai mare element al vectorului. 
+        /// Pentru extra-credit realizati programul efectuand 3n/2 comparatii (in cel mai rau caz).
+        /// </summary>
+        private static void CmmCmM()
+        {
+            int n, cmm, cmM;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            cmm = v[0];
+            cmM = v[0];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+
+                if (v[i] < cmm || v[i] == v[0])
+                {
+                    cmm = v[i];
+                    Console.WriteLine($"Numarul se afla in pozitia {i}");
+                }
+                else if (v[i] > cmM || v[i] == v[0])
+                {
+                    cmM = v[i];
+                    Console.WriteLine($"Numarul se afla in pozitia {i}");
+                }
+            }
+            Console.WriteLine($"Cel mai mic element al vectorului este {cmm} si cel mai mare este {cmM}");
         }
 
         /// <summary>
