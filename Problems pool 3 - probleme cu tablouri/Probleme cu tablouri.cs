@@ -20,6 +20,35 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //CmmCmM2();
             //EinpozK();
             //StergeK();
+            Inversare();
+        }
+
+        /// <summary>
+        /// Reverse. Se da un vector n elemente. Se cere sa se inverseze ordinea elementelor din vector.
+        /// Prin inversare se intelege ca primul element devine ultimul, al doilea devine penultimul etc.
+        /// </summary>
+        private static void Inversare()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+            int[] x = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Vectorul cu elementele inversate este:");
+            for (int i = 0; i < n; i++)
+            {
+                x[i] = v[n - 1 - i];
+                Console.Write($"{x[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
