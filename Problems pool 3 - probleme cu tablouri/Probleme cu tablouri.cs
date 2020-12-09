@@ -22,7 +22,54 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //StergeK();
             //Inversare();
             //PozitieK2();
-            Eratostene();
+            //Eratostene();
+            ZeroLaSfarsit();
+            EliminareElRep();
+        }
+
+        private static void EliminareElRep()
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Interschimbati elementele unui vector in asa fel incat la final 
+        /// toate valorile egale cu zero sa ajunga la sfarsit.
+        /// </summary>
+        private static void ZeroLaSfarsit()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            int aux;
+            for (int i = 0; i < n; i++)
+            {
+                if (v[i] == 0)
+                {
+                    while (v[n] == 0)
+                    {
+                        n--;
+                    }
+                    aux = v[i];
+                    v[i] = v[n];
+                    v[n] = aux;
+                }
+                n--;
+            }
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
