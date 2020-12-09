@@ -27,9 +27,36 @@ namespace Problems_pool_3___probleme_cu_tablouri
             EliminareElRep();
         }
 
+        /// <summary>
+        /// Modificati un vector prin eliminarea elementelor care se repeta, fara a folosi un alt vector.
+        /// </summary>
         private static void EliminareElRep()
         {
-            throw new NotImplementedException();
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = n - 1; i >= 0; i--)
+            {
+                if (v[i] == v[i - 1])
+                {
+                    for (int j = i; j < n - 1; j++)
+                    {
+                        v[i] = v[i + 1];
+                    }
+                    n--;
+                }
+                Console.Write($"{v[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
