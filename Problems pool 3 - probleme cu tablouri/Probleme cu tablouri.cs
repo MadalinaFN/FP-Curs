@@ -21,7 +21,45 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //EinpozK();
             //StergeK();
             //Inversare();
-            PozitieK2();
+            //PozitieK2();
+            Eratostene();
+        }
+
+        /// <summary>
+        /// Se da un numar natural n. 
+        /// Se cere sa se afiseze toate numerele prime mai mici sau egale cu n (ciurul lui Eratostene).
+        /// </summary>
+        private static void Eratostene()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = 0;
+            }
+            v[0] = 1;
+            v[1] = 1;
+            for (int i = 2; i < Math.Sqrt(n); i++)
+            {
+                if (v[i] == 0)
+                {
+                    for (int j = 2; j < n / i; j++)
+                    {
+                        v[i * j] = 1;
+                    }
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (v[i] == 0)
+                    Console.Write($"{i} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
