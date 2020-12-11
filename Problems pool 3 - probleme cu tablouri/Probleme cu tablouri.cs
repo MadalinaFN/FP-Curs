@@ -65,7 +65,7 @@ namespace Problems_pool_3___probleme_cu_tablouri
         /// </summary>
         private static void ZeroLaSfarsit()
         {
-            int n;
+            int n, aux;
 
             Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
             n = int.Parse(Console.ReadLine());
@@ -77,20 +77,17 @@ namespace Problems_pool_3___probleme_cu_tablouri
             {
                 v[i] = int.Parse(Console.ReadLine());
             }
-            int aux;
             for (int i = 0; i < n; i++)
             {
-                if (v[i] == 0)
+                for (int j = i + 1; j < n; j++)
                 {
-                    while (v[n] == 0)
+                    if (v[i] == 0 && v[j] != 0)
                     {
-                        n--;
+                        aux = v[i];
+                        v[i] = v[j];
+                        v[j] = aux;
                     }
-                    aux = v[i];
-                    v[i] = v[n];
-                    v[n] = aux;
                 }
-                n--;
             }
             for (int i = 0; i < n; i++)
             {
