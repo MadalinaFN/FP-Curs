@@ -26,7 +26,38 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //ZeroLaSfarsit();
             //EliminareElRep();
             //CMMDC();
-            ConvertireNinB();
+            //ConvertireNinB();
+            Polinom();
+        }
+
+        /// <summary>
+        /// Se da un polinom de grad n ai carui coeficienti sunt stocati intr-un vector.
+        /// Cel mai putin semnificativ coeficient este pe pozitia zero in vector.
+        /// Se cere valoarea polinomului intr-un punct x.
+        /// </summary>
+        private static void Polinom()
+        {
+            int n, x, n1, valoare = 0;
+
+            Console.WriteLine("Introduceti gradul polinomului");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti punctul x");
+            x = int.Parse(Console.ReadLine());
+            n1 = n;
+
+            int[] v = new int[n + 1];
+
+            Console.WriteLine("Introduceti coeficientii");
+            for (int i = 0; i < n + 1; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n + 1; i++)
+            {
+                valoare = valoare + (v[i] * (int)Math.Pow(x, n1));
+                n1--;
+            }
+            Console.WriteLine($"Valoarea polinomului in punctul {x} este {valoare}");
         }
 
         /// <summary>
