@@ -28,7 +28,68 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //CMMDC();
             //ConvertireNinB();
             //Polinom();
-            AparePinS();
+            //AparePinS();
+            //SiraguriDeMargele();
+        }
+
+        /// <summary>
+        /// Se dau doua siraguri de margele formate din margele albe si negre, notate s1, respectiv s2.
+        /// Determinati numarul de suprapuneri (margea cu margea) a unui sirag peste celalalt 
+        /// astfel incat margelele suprapuse au aceeasi culoare.
+        /// Siragurile de margele se pot roti atunci cand le suprapunem.
+        /// </summary>
+        private static void SiraguriDeMargele()
+        {
+            int n, x, contor = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul s1");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul s2");
+            x = int.Parse(Console.ReadLine());
+
+            int[] s1 = new int[n];
+            int[] s2 = new int[x];
+
+            Console.WriteLine("Introduceti elementele vectorului s1");
+            for (int i = 0; i < n; i++)
+            {
+                s1[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului s2");
+            for (int i = 0; i < x; i++)
+            {
+                s2[i] = int.Parse(Console.ReadLine());
+            }
+            if (n > x)
+            {
+                for (int i = 0; i < n - 1; i++)
+                {
+                    if (Vector(s1, s2, n, x) != 0)
+                        contor++;
+                }
+            }
+            else
+            {
+                for (int k = 0; k < x - 1; k++)
+                {
+                    if (Vector(s2, s1, x, n) != 0)
+                        contor++;
+                }
+            }
+            Console.WriteLine($"Numarul de suprapuneri a unui sirag peste celalalt este {contor}");
+        }
+
+        private static int Vector(int[] s1, int[] s2, int max, int min)
+        {
+            int contor = 0, j;
+            for (int i = 0; i < max - min + 1; i++)
+            {
+                for (j = 0; j < min && s1[j + i] == s2[j]; j++)
+                { }
+                if (j == min)
+                    contor++;
+            }
+            return contor;
         }
 
         /// <summary>
