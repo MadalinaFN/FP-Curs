@@ -27,7 +27,46 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //EliminareElRep();
             //CMMDC();
             //ConvertireNinB();
-            Polinom();
+            //Polinom();
+            AparePinS();
+        }
+
+        /// <summary>
+        /// Se da un vector s (vectorul in care se cauta) si un vector p (vectorul care se cauta). 
+        /// Determinati de cate ori apare p in s. 
+        /// De ex. Daca s = [1,2,1,2,1,3,1,2,1] si p = [1,2,1] atunci p apare in s de 3 ori. 
+        /// (Problema este dificila doar daca o rezolvati cu un algoritm liniar).
+        /// </summary>
+        private static void AparePinS()
+        {
+            int n, x, contor = 0, j;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul s");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul p");
+            x = int.Parse(Console.ReadLine());
+
+            int[] s = new int[n];
+            int[] p = new int[x];
+
+            Console.WriteLine("Introduceti elementele vectorului s");
+            for (int i = 0; i < n; i++)
+            {
+                s[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului p");
+            for (int i = 0; i < x; i++)
+            {
+                p[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n - x + 1; i++)
+            {
+                for (j = 0; j < x && s[j + i] == p[j]; j++)
+                { }
+                if (j == x)
+                    contor++;
+            }
+            Console.WriteLine($"P apare de {contor} ori in S");
         }
 
         /// <summary>
