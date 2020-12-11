@@ -25,6 +25,41 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //Eratostene();
             //ZeroLaSfarsit();
             //EliminareElRep();
+            CMMDC();
+        }
+
+        /// <summary>
+        /// Se da un vector de n numere naturale. 
+        /// Determinati cel mai mare divizor comun al elementelor vectorului.
+        /// </summary>
+        private static void CMMDC()
+        {
+            int n, cmmdc, elvect;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            cmmdc = v[0];
+            for (int i = 1; i < n; i++)
+            {
+                elvect = v[i];
+                while (elvect != cmmdc)
+                {
+                    if (elvect > cmmdc)
+                        elvect = elvect - cmmdc;
+                    else if (elvect < cmmdc)
+                        cmmdc = cmmdc - elvect;
+                }
+            }
+            Console.Write($"Cel mai mare divizor comun al elementelor vectorului este {cmmdc}");
+            Console.WriteLine();
         }
 
         /// <summary>
