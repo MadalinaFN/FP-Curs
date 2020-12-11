@@ -23,8 +23,8 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //Inversare();
             //PozitieK2();
             //Eratostene();
-            ZeroLaSfarsit();
-            EliminareElRep();
+            //ZeroLaSfarsit();
+            //EliminareElRep();
         }
 
         /// <summary>
@@ -44,16 +44,23 @@ namespace Problems_pool_3___probleme_cu_tablouri
             {
                 v[i] = int.Parse(Console.ReadLine());
             }
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = 0; i < n - 1; i++)
             {
-                if (v[i] == v[i - 1])
+                for (int j = i + 1; j < n; j++)
                 {
-                    for (int j = i; j < n - 1; j++)
+                    if (v[i] == v[j])
                     {
-                        v[i] = v[i + 1];
+                        for (int k = j; k < n - 1; k++)
+                        {
+                            v[k] = v[k + 1];
+                        }
+                        n--;
+                        j--;
                     }
-                    n--;
                 }
+            }
+            for (int i = 0; i < n; i++)
+            {
                 Console.Write($"{v[i]} ");
             }
             Console.WriteLine();
