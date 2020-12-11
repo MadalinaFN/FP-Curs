@@ -25,7 +25,41 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //Eratostene();
             //ZeroLaSfarsit();
             //EliminareElRep();
-            CMMDC();
+            //CMMDC();
+            ConvertireNinB();
+        }
+
+        /// <summary>
+        /// Se da un numar n in baza 10 si un numar b. 1 < b < 17. 
+        /// Sa se converteasca si sa se afiseze numarul n in baza b.
+        /// </summary>
+        private static void ConvertireNinB()
+        {
+            int n, b, x = 0, rest;
+
+            Console.WriteLine("Introduceti un numar in baza 10");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti baza in care vreti sa convertiti numarul (intre 1 si 17)");
+            b = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            do
+            {
+                rest = n % b;
+                n = n / b;
+                v[x] = rest;
+                x++;
+            } while (n != 0);
+            Console.WriteLine("Numarul convertit este:");
+            for (int i = x - 1; i >= 0; i--)
+            {
+                if (v[i] < 10)
+                    Console.Write($"{v[i]}");
+                else if (v[i] >= 10)
+                    Console.Write($"{(char)(v[i] + (int)'A' - 10)}");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
@@ -59,7 +93,6 @@ namespace Problems_pool_3___probleme_cu_tablouri
                 }
             }
             Console.Write($"Cel mai mare divizor comun al elementelor vectorului este {cmmdc}");
-            Console.WriteLine();
         }
 
         /// <summary>
