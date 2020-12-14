@@ -32,6 +32,94 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //SiraguriDeMargele();
             //Lexicografica();
             ///////////////OperatiiCuMultimi();
+            ///////////////OperatiiCuMultimi2();
+            ///////////////OperatiiCuMultimi3();
+            //VectorCrescator();
+        }
+
+        /// <summary>
+        /// (Interclasare) Se dau doi vector sortati crescator v1 si v2.
+        /// Construiti un al treilea vector ordonat crescator format din toate elementele din  v1 si v2.
+        /// Sunt permise elemente duplicate.
+        /// </summary>
+        private static void VectorCrescator()
+        {
+            int n, x, l = 0, m = 0, z = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul v1");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul v2");
+            x = int.Parse(Console.ReadLine());
+
+            int[] v1 = new int[n];
+            int[] v2 = new int[x];
+            int[] v3 = new int[n + x];
+
+            Console.WriteLine("Introduceti elementele vectorului v1");
+            for (int i = 0; i < n; i++)
+            {
+                v1[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului v2");
+            for (int i = 0; i < x; i++)
+            {
+                v2[i] = int.Parse(Console.ReadLine());
+            }
+            do
+            {
+                if (v1[l] < v2[m])
+                {
+                    v3[z] = v1[l];
+                    z++;
+                    l++;
+                }
+                else
+                {
+                    v3[z] = v2[m];
+                    z++;
+                    m++;
+                }
+            } while (l < n && m < x);
+            if (l < n)
+            {
+                for (int i = l; i < n; i++)
+                {
+                    v3[z] = v1[i];
+                    z++;
+                }
+            }
+            if (m < x)
+            {
+                for (int i = m; i < x; i++)
+                {
+                    v3[z] = v2[i];
+                    z++;
+                }
+            }
+            for (int i = 0; i < z; i++)
+            {
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
+        }
+
+        /// <summary>
+        /// Aceleasi cerinte ca si la problema anterioara dar de data asta 
+        /// elementele sunt stocate ca vectori cu valori binare
+        /// (v[i] este 1 daca i face parte din multime si este 0 in caz contrar).
+        /// </summary>
+        private static void OperatiiCuMultimi3()
+        {
+            
+        }
+
+        /// <summary>
+        /// Aceleasi cerinte ca si la problema anterioara dar de data asta 
+        /// elementele din v1 respectiv v2  sunt in ordine strict crescatoare.
+        /// </summary>
+        private static void OperatiiCuMultimi2()
+        {
+            
         }
 
         /// <summary>
