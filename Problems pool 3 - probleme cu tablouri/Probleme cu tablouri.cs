@@ -30,6 +30,80 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //Polinom();
             //AparePinS();
             //SiraguriDeMargele();
+            //Lexicografica();
+        }
+
+        /// <summary>
+        /// Se dau doi vectori. Se cere sa se determine ordinea lor lexicografica 
+        /// (care ar trebui sa apara primul in dictionar).
+        /// </summary>
+        private static void Lexicografica()
+        {
+            int n, x, contor = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba primul vector");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti cate elemente sa aiba al doilea vector");
+            x = int.Parse(Console.ReadLine());
+
+            int[] v1 = new int[n];
+            int[] v2 = new int[x];
+
+            Console.WriteLine("Introduceti elementele primului vector");
+            for (int i = 0; i < n; i++)
+            {
+                v1[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului al doilea");
+            for (int i = 0; i < x; i++)
+            {
+                v2[i] = int.Parse(Console.ReadLine());
+            }
+            if (n > x)
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    if (v1[i] > v2[i])
+                    {
+                        Console.WriteLine("Al doilea vector este primul in ordinea lexicografica");
+                        break;
+                    }
+                    else if (v1[i] < v2[i])
+                    {
+                        Console.WriteLine("Primul vector este primul in ordinea lexicografica");
+                        break;
+                    }
+                    else if (v1[i] == v2[i])
+                        contor++;
+                }
+                if (contor == x)
+                    Console.WriteLine("Al doilea vector este primul in ordinea lexicografica");
+            }
+            else
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (v1[i] > v2[i])
+                    {
+                        Console.WriteLine("Al doilea vector este primul in ordinea lexicografica");
+                        break;
+                    }
+                    else if (v1[i] < v2[i])
+                    {
+                        Console.WriteLine("Primul vector este primul in ordinea lexicografica");
+                        break;
+                    }
+                    else if (v1[i] == v2[i])
+                        contor++;
+                }
+                if (contor == n)
+                {
+                    if (n == x)
+                        Console.WriteLine("Vectorii sunt egali");
+                    else
+                        Console.WriteLine("Primul vector este primul in ordinea lexicografica");
+                }
+            }
         }
 
         /// <summary>
