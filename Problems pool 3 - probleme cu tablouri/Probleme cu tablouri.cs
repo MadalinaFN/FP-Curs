@@ -31,6 +31,90 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //AparePinS();
             //SiraguriDeMargele();
             //Lexicografica();
+            ///////////////OperatiiCuMultimi();
+        }
+
+        /// <summary>
+        /// Se dau doi vectori v1 si v2.
+        /// Se cere sa determine intersectia, reuniunea, si diferentele v1-v2 si v2 -v1 
+        /// (implementarea operatiilor cu multimi).
+        /// Elementele care se repeta vor fi scrise o singura data in rezultat.
+        /// </summary>
+        private static void OperatiiCuMultimi()
+        {
+            int n, x, intersectia = 0, reuniunea = 0, diferenta1 = 0, diferenta2 = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul v1");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul v2");
+            x = int.Parse(Console.ReadLine());
+
+            int[] v1 = new int[n];
+            int[] v2 = new int[x];
+
+            Console.WriteLine("Introduceti elementele vectorului v1");
+            for (int i = 0; i < n; i++)
+            {
+                v1[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului v2");
+            for (int i = 0; i < x; i++)
+            {
+                v2[i] = int.Parse(Console.ReadLine());
+            }
+            if (n > x)
+            {
+                for (int i = 0; i < n; i++)
+                {
+                    if (v1[i] == v2[i])
+                        intersectia = v1[i];
+                    else if (v1[i] > v2[i])
+                        intersectia = v2[i];
+                    else if (v1[i] < v2[i])
+                        intersectia = v1[i];
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    if (v1[i] == v2[i])
+                        reuniunea = v1[i];
+                    else if (v1[i] > v2[i])
+                        reuniunea = v1[i];
+                    else if (v1[i] < v2[i])
+                        reuniunea = v2[i];
+                }
+                for (int i = 0; i < n; i++)
+                {
+                    diferenta1 = v1[i] - v2[i];
+                    diferenta2 = v2[i] - v1[i];
+                }
+            }
+            else if (x > n)
+            {
+                for (int i = 0; i < x; i++)
+                {
+                    if (v1[i] == v2[i])
+                        intersectia = v1[i];
+                    else if (v1[i] > v2[i])
+                        intersectia = v2[i];
+                    else if (v1[i] < v2[i])
+                        intersectia = v1[i];
+                }
+                for (int i = 0; i < x; i++)
+                {
+                    if (v1[i] == v2[i])
+                        reuniunea = v1[i];
+                    else if (v1[i] > v2[i])
+                        reuniunea = v1[i];
+                    else if (v1[i] < v2[i])
+                        reuniunea = v2[i];
+                }
+                for (int i = 0; i < x; i++)
+                {
+                    diferenta1 = v1[i] - v2[i];
+                    diferenta2 = v2[i] - v1[i];
+                }
+            }
+            Console.WriteLine($"Intersectia este {intersectia}, reuniunea este {reuniunea} iar diferentele sunt {diferenta1} si {diferenta2}");
         }
 
         /// <summary>
