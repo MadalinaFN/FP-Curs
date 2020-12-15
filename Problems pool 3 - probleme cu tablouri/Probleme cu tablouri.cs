@@ -36,6 +36,44 @@ namespace Problems_pool_3___probleme_cu_tablouri
             ///////////////OperatiiCuMultimi3();
             //VectorCrescator();
             //SumDifProd();
+            ValIndex();
+        }
+
+        /// <summary>
+        /// Se da un vector si un index in vectorul respectiv. 
+        /// Se cere sa se determine valoarea din vector care va fi 
+        /// pe pozitia index dupa ce vectorul este sortat.
+        /// </summary>
+        private static void ValIndex()
+        {
+            int n, index, aux;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+            Console.WriteLine("Introduceti pozitia index");
+            index = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int k = i; k > 0 && v[k] < v[k - 1]; k--)
+                {
+                    aux = v[k];
+                    v[k] = v[k - 1];
+                    v[k - 1] = aux;
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (index == i)
+                    Console.WriteLine(v[i]);
+            }
         }
 
         /// <summary>
