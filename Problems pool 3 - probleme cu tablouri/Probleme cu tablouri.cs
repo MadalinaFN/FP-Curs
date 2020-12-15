@@ -38,6 +38,77 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //SumDifProd();
             //ValIndex();
             //QuickSort();
+            //MergeSort();
+        }
+
+        /// <summary>
+        /// MergeSort. Sortati un vector folosind metoda MergeSort.
+        /// </summary>
+        private static void MergeSort()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            MSort(v, 0, n - 1);
+            for (int i = 0; i < n; i++)
+                Console.Write($"{v[i]} ");
+            Console.WriteLine();
+        }
+
+        private static void MSort(int[] inp, int st, int dr)
+        {
+            if (st < dr)
+            {
+                int mij = (st + dr) / 2;
+
+                MSort(inp, st, mij);
+                MSort(inp, mij + 1, dr);
+                Merge(inp, st, mij, dr);
+            }
+        }
+
+        private static void Merge(int[] inp, int st, int mij, int dr)
+        {
+            int[] stArr = new int[mij - st + 1];
+            int[] drArr = new int[dr - mij];
+
+            Array.Copy(inp, st, stArr, 0, mij - st + 1);
+            Array.Copy(inp, mij + 1, drArr, 0, dr - mij);
+
+            int i = 0;
+            int j = 0;
+            for (int k = st; k < dr + 1; k++)
+            {
+                if (i == stArr.Length)
+                {
+                    inp[k] = drArr[j];
+                    j++;
+                }
+                else if (j == drArr.Length)
+                {
+                    inp[k] = stArr[i];
+                    i++;
+                }
+                else if (stArr[i] <= drArr[j])
+                {
+                    inp[k] = stArr[i];
+                    i++;
+                }
+                else
+                {
+                    inp[k] = drArr[j];
+                    j++;
+                }
+            }
         }
 
         /// <summary>
@@ -57,20 +128,20 @@ namespace Problems_pool_3___probleme_cu_tablouri
             {
                 v[i] = int.Parse(Console.ReadLine());
             }
-            QuickSort(v, 0, n - 1);
+            Sort(v, 0, n - 1);
             for (int i = 0; i < n; i++)
                 Console.Write($"{v[i]} ");
             Console.WriteLine();
         }
 
-        private static void QuickSort(int[] v, int inc, int sf)
+        private static void Sort(int[] v, int inc, int sf)
         {
             int i;
             if (inc < sf)
             {
                 i = Partition(v, inc, sf);
-                QuickSort(v, inc, i - 1);
-                QuickSort(v, i + 1, sf);
+                Sort(v, inc, i - 1);
+                Sort(v, i + 1, sf);
             }
         }
 
