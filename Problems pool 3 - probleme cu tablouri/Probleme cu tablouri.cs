@@ -35,6 +35,56 @@ namespace Problems_pool_3___probleme_cu_tablouri
             ///////////////OperatiiCuMultimi2();
             ///////////////OperatiiCuMultimi3();
             //VectorCrescator();
+            //SumDifProd();
+        }
+
+        /// <summary>
+        /// Se dau doua numere naturale foarte mari 
+        /// (cifrele unui numar foarte mare sunt stocate intr-un vector - fiecare cifra pe cate o pozitie).
+        /// Se cere sa se determine suma, diferenta si produsul a doua astfel de numere.
+        /// </summary>
+        private static void SumDifProd()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorii");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v1 = new int[n];
+            int[] v2 = new int[n];
+            int[] v3 = new int[n];
+
+            Console.WriteLine("Introduceti cifrele primului numar");
+            for (int i = 0; i < n; i++)
+            {
+                v1[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti cifrele numarului al doilea");
+            for (int i = 0; i < n; i++)
+            {
+                v2[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Suma este:");
+            for (int i = 0; i < n; i++)
+            {
+                v3[i] = v1[i] + v2[i];
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Diferenta este:");
+            for (int i = 0; i < n; i++)
+            {
+                v3[i] = v1[i] - v2[i];
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Produsul este:");
+            for (int i = 0; i < n; i++)
+            {
+                v3[i] = v1[i] * v2[i];
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
