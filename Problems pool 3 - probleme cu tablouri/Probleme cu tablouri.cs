@@ -36,7 +36,64 @@ namespace Problems_pool_3___probleme_cu_tablouri
             ///////////////OperatiiCuMultimi3();
             //VectorCrescator();
             //SumDifProd();
-            ValIndex();
+            //ValIndex();
+            //QuickSort();
+        }
+
+        /// <summary>
+        /// Quicksort. Sortati un vector folosind metoda QuickSort.
+        /// </summary>
+        private static void QuickSort()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            QuickSort(v, 0, n - 1);
+            for (int i = 0; i < n; i++)
+                Console.Write($"{v[i]} ");
+            Console.WriteLine();
+        }
+
+        private static void QuickSort(int[] v, int inc, int sf)
+        {
+            int i;
+            if (inc < sf)
+            {
+                i = Partition(v, inc, sf);
+                QuickSort(v, inc, i - 1);
+                QuickSort(v, i + 1, sf);
+            }
+        }
+
+        private static int Partition(int[] v, int inc, int sf)
+        {
+            int t;
+            int p = v[sf];
+            int i = inc - 1;
+
+            for (int j = inc; j <= sf - 1; j++)
+            {
+                if (v[j] <= p)
+                {
+                    i++;
+                    t = v[i];
+                    v[i] = v[j];
+                    v[j] = t;
+                }
+            }
+            t = v[i + 1];
+            v[i + 1] = v[sf];
+            v[sf] = t;
+            return i + 1;
         }
 
         /// <summary>
