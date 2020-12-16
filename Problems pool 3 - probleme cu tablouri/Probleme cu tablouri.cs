@@ -40,7 +40,7 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //QuickSort();
             //MergeSort();
             //SortareBicriteriala();
-            //ElementMajoriatate();
+            //ElementMajoritate();
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Problems_pool_3___probleme_cu_tablouri
         /// (daca nu exista atunci se va afisa <nu exista>).
         /// (incercati sa gasiti o solutie liniara).
         /// </summary>
-        private static void ElementMajoriatate()
+        private static void ElementMajoritate()
         {
             int n, m, contor = 0, aparitii = 0;
 
