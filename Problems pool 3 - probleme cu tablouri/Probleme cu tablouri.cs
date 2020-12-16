@@ -40,6 +40,59 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //QuickSort();
             //MergeSort();
             //SortareBicriteriala();
+            //ElementMajoriatate();
+        }
+
+        /// <summary>
+        /// (Element majoritate). Intr-un vector cu n elemente, un element m este element majoritate 
+        /// daca mai mult de n/2 din valorile vectorului sunt egale cu m 
+        /// (prin urmare, daca un vector are element majoritate acesta este unui singur).
+        /// Sa se determine elementul majoritate al unui vector 
+        /// (daca nu exista atunci se va afisa <nu exista>).
+        /// (incercati sa gasiti o solutie liniara).
+        /// </summary>
+        private static void ElementMajoriatate()
+        {
+            int n, m, contor = 0, aparitii = 0;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorul");
+            n = int.Parse(Console.ReadLine());
+
+            int[] v = new int[n];
+
+            m = v[0];
+
+            Console.WriteLine("Introduceti elementele vectorului");
+            for (int i = 0; i < n; i++)
+            {
+                v[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (contor == 0)
+                {
+                    m = v[i];
+                    contor = 1;
+                }
+                else
+                {
+                    if (v[i] == m)
+                        contor += 1;
+                    else
+                        contor -= 1;
+                }
+            }
+            for (int i = 0; i < n; i++)
+            {
+                if (v[i] == m)
+                {
+                    aparitii += 1;
+                }
+            }
+            if (aparitii < n / 2)
+                Console.WriteLine("Nu exista");
+            else
+                Console.WriteLine($"Elementul majoritate este {m}");
         }
 
         /// <summary>
