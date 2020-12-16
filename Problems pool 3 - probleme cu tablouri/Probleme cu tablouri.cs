@@ -39,6 +39,63 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //ValIndex();
             //QuickSort();
             //MergeSort();
+            //SortareBicriteriala();
+        }
+
+        /// <summary>
+        /// Sortare bicriteriala. Se dau doi vectori de numere intregi E si W, 
+        /// unde E[i] este un numar iar W[i] este un numar care reprezinta ponderea lui E[i].
+        /// Sortati vectorii astfel incat elementele lui E sa fie in in ordine crescatoare 
+        /// iar pentru doua valori egale din E, cea cu pondere mai mare va fi prima.
+        /// </summary>
+        private static void SortareBicriteriala()
+        {
+            int n;
+
+            Console.WriteLine("Introduceti cate elemente sa aiba vectorii");
+            n = int.Parse(Console.ReadLine());
+
+            int[] E = new int[n];
+            int[] W = new int[n];
+
+            Console.WriteLine("Introduceti elementele vectorului E");
+            for (int i = 0; i < n; i++)
+            {
+                E[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Introduceti elementele vectorului W");
+            for (int i = 0; i < n; i++)
+            {
+                W[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = i; j < n; j++)
+                {
+                    if (E[i] > E[j])
+                    {
+                        int aux = E[i];
+                        E[i] = E[j];
+                        E[j] = aux;
+                    }
+                    /*if (E[i] == E[j])
+                    {
+                        if (W[i] > W[j])
+                        {
+                            int aux = W[i];
+                            W[i] = W[j];
+                            W[j] = aux;
+                        }
+                    }*/
+                }
+                Console.Write($"{E[i]} ");
+            }
+            Console.WriteLine();
+            /*for (int i = 0; i < n; i++)
+            {
+                Console.Write($"{W[i]} ");
+            }
+            Console.WriteLine();*/
         }
 
         /// <summary>
