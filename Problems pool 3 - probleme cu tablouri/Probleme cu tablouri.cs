@@ -31,7 +31,7 @@ namespace Problems_pool_3___probleme_cu_tablouri
             //AparePinS();
             //SiraguriDeMargele();
             //Lexicografica();
-            ///////////////OperatiiCuMultimi();
+            //OperatiiCuMultimi();
             ///////////////OperatiiCuMultimi2();
             ///////////////OperatiiCuMultimi3();
             //VectorCrescator();
@@ -450,13 +450,13 @@ namespace Problems_pool_3___probleme_cu_tablouri
 
         /// <summary>
         /// Se dau doi vectori v1 si v2.
-        /// Se cere sa determine intersectia, reuniunea, si diferentele v1-v2 si v2 -v1 
+        /// Se cere sa determine intersectia, reuniunea, si diferentele v1-v2 si v2-v1 
         /// (implementarea operatiilor cu multimi).
         /// Elementele care se repeta vor fi scrise o singura data in rezultat.
         /// </summary>
         private static void OperatiiCuMultimi()
         {
-            int n, x, intersectia = 0, reuniunea = 0, diferenta1 = 0, diferenta2 = 0;
+            int n, x, k = 0, j, i, gasit, z = 0, k1= 0, z1 = 0;
 
             Console.WriteLine("Introduceti cate elemente sa aiba vectorul v1");
             n = int.Parse(Console.ReadLine());
@@ -465,70 +465,124 @@ namespace Problems_pool_3___probleme_cu_tablouri
 
             int[] v1 = new int[n];
             int[] v2 = new int[x];
+            int[] v3 = new int[n + x];
 
             Console.WriteLine("Introduceti elementele vectorului v1");
-            for (int i = 0; i < n; i++)
+            for (i = 0; i < n; i++)
             {
                 v1[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine("Introduceti elementele vectorului v2");
-            for (int i = 0; i < x; i++)
+            for (j = 0; j < x; j++)
             {
-                v2[i] = int.Parse(Console.ReadLine());
+                v2[j] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine("Intersectia este:");
+            for (i = 0; i < n; i++)
+            {
+                for (j = 0; j < x; j++)
+                {
+                    if (v1[i] == v2[j])
+                    {
+                        v3[k] = v1[i];
+                        k++;
+                    }
+                }
+            }
+            for (i = 0; i < k; i++)
+            {
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Reuniunea este:");
+            for (i = 0; i < n; i++)
+            {
+                v3[z] = v1[i];
+                z++;
+            }
+            for (i = 0; i < x; i++)
+            {
+                gasit = 0;
+                for (j = 0; j < z; j++)
+                {
+                    if (v3[j] == v2[i])
+                    {
+                        gasit = 1;
+                    }
+                }
+                if (gasit == 0)
+                {
+                    v3[z] = v2[i];
+                    z++;
+                }
+            }
+            for (i = 0; i < z; i++)
+            {
+                Console.Write($"{v3[i]} ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Diferenta v1 - v2 este:");
+            for (i = 0; i < n; i++)
+            {
+                for (j = i; j < x; j++)
+                {
+                    v3[k1] = v1[j] - v2[j];
+                    k1++;
+                }
             }
             if (n > x)
             {
-                for (int i = 0; i < n; i++)
+                for (i = 0; i < n; i++)
                 {
-                    if (v1[i] == v2[i])
-                        intersectia = v1[i];
-                    else if (v1[i] > v2[i])
-                        intersectia = v2[i];
-                    else if (v1[i] < v2[i])
-                        intersectia = v1[i];
-                }
-                for (int i = 0; i < n; i++)
-                {
-                    if (v1[i] == v2[i])
-                        reuniunea = v1[i];
-                    else if (v1[i] > v2[i])
-                        reuniunea = v1[i];
-                    else if (v1[i] < v2[i])
-                        reuniunea = v2[i];
-                }
-                for (int i = 0; i < n; i++)
-                {
-                    diferenta1 = v1[i] - v2[i];
-                    diferenta2 = v2[i] - v1[i];
+                    Console.Write($"{v3[i]} ");
                 }
             }
-            else if (x > n)
+            if (x > n)
             {
-                for (int i = 0; i < x; i++)
+                for (i = 0; i < x; i++)
                 {
-                    if (v1[i] == v2[i])
-                        intersectia = v1[i];
-                    else if (v1[i] > v2[i])
-                        intersectia = v2[i];
-                    else if (v1[i] < v2[i])
-                        intersectia = v1[i];
-                }
-                for (int i = 0; i < x; i++)
-                {
-                    if (v1[i] == v2[i])
-                        reuniunea = v1[i];
-                    else if (v1[i] > v2[i])
-                        reuniunea = v1[i];
-                    else if (v1[i] < v2[i])
-                        reuniunea = v2[i];
-                }
-                for (int i = 0; i < x; i++)
-                {
-                    diferenta1 = v1[i] - v2[i];
-                    diferenta2 = v2[i] - v1[i];
+                    Console.Write($"{v3[i]} ");
                 }
             }
-            Console.WriteLine($"Intersectia este {intersectia}, reuniunea este {reuniunea} iar diferentele sunt {diferenta1} si {diferenta2}");
+            if (n == x)
+            {
+                for (i = 0; i < n; i++)
+                {
+                    Console.Write($"{v3[i]} ");
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Diferenta v2 - v1 este:");
+            for (i = 0; i < n; i++)
+            {
+                for (j = i; j < x; j++)
+                {
+                    v3[z1] = v2[j] - v1[j];
+                    z1++;
+                }
+            }
+            if (n > x)
+            {
+                for (i = 0; i < n; i++)
+                {
+                    Console.Write($"{v3[i]} ");
+                }
+            }
+            if (x > n)
+            {
+                for (i = 0; i < x; i++)
+                {
+                    Console.Write($"{v3[i]} ");
+                }
+            }
+            if (n == x)
+            {
+                for (i = 0; i < n; i++)
+                {
+                    Console.Write($"{v3[i]} ");
+                }
+            }
+            Console.WriteLine();
         }
 
         /// <summary>
